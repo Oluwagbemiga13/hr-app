@@ -33,14 +33,13 @@ public class EmployeeService {
         throw new RuntimeException("Null pointer - TODO");
     }
 
-    public List<Employee> findAll(int size, int page){
-        return employeeRepository.findAll(size, page);
-    }
-
     /**
      * Basic method for getting size of "Database"
      * @return size of employeeMap
      */
+    public List<Employee> findAll(int size, int page){
+        return employeeRepository.findAll(size, page);
+    }
 
 
     /**
