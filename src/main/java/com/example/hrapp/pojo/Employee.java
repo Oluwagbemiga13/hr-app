@@ -16,6 +16,4 @@ public class Employee {
 
     private String fullName;
 
-
-
 }

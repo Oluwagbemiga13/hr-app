@@ -21,4 +21,9 @@ public class MessageControllerImpl  implements MessageController{
     public Message anotherMessage() {
         return messageService.getAnotherMessage();
     }
+
+    @Override
+    public String textMessage() {
+        return "Plain_text_nothing_else. Good luck Carlos!";
+    }
 }
