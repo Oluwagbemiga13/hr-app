@@ -16,6 +16,6 @@ public class Employee {
 
     private String fullName;
 
-
+    private List<Day> dayList;
 
 }

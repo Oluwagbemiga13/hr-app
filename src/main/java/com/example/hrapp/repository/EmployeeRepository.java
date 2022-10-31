@@ -71,7 +71,6 @@ public class EmployeeRepository {
      * @return employee that just been inserted
      */
     public Employee insertEmployee(Employee employee){
-        employee.setId(this.count());
 
         employeeMap.put(employee.getId(), employee);
         return employee;

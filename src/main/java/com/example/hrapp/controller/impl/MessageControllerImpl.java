@@ -1,14 +1,16 @@
-package com.example.hrapp.controller;
+package com.example.hrapp.controller.impl;
 
+import com.example.hrapp.controller.inter.MessageController;
 import com.example.hrapp.pojo.Message;
 import com.example.hrapp.service.MessageService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.RestController;
+
+import java.time.LocalTime;
 
 @Component
 @RequiredArgsConstructor
-public class MessageControllerImpl  implements MessageController{
+public class MessageControllerImpl  implements MessageController {
 
     private final MessageService messageService;
 
@@ -20,5 +22,10 @@ public class MessageControllerImpl  implements MessageController{
     @Override
     public Message anotherMessage() {
         return messageService.getAnotherMessage();
+    }
+
+    @Override
+    public String textMessage() {
+        return "Plain_text_nothing_else. Good luck Carlos! Time: " + LocalTime.now();
     }
 }

@@ -1,5 +1,6 @@
-package com.example.hrapp.controller;
+package com.example.hrapp.controller.impl;
 
+import com.example.hrapp.controller.inter.EmployeeController;
 import com.example.hrapp.pojo.Employee;
 import com.example.hrapp.service.EmployeeService;
 import lombok.RequiredArgsConstructor;
@@ -12,7 +13,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("/employee")
-public class EmployeeControllerImpl implements EmployeeController{
+public class EmployeeControllerImpl implements EmployeeController {
     private final EmployeeService employeeService;
 
     @Override
@@ -26,8 +27,9 @@ public class EmployeeControllerImpl implements EmployeeController{
         return employeeService.findAll(size,page);
     }
 
-//    @Override
-//    public Employee insertEmployee(Employee employee) {
-//        return employeeService.insertEmployee(employee);
-//    }
+    @Override
+    public Employee insertEmployee(Employee employee) {
+        return employeeService.insertEmployee(employee);
+    }
+
 }
