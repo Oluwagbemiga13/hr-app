@@ -16,4 +16,9 @@ public class MessageControllerImpl  implements MessageController{
     public Message helloWorld(){
         return messageService.getHelloWorld();
     }
+
+    @Override
+    public Message anotherMessage() {
+        return messageService.getAnotherMessage();
+    }
 }

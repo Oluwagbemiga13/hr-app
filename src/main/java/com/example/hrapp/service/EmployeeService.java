@@ -20,8 +20,11 @@ public class EmployeeService {
      * @param id of Employee
      * @return Optional of Employee
      */
-    public Optional<Employee> findById(long id) {
-        return employeeRepository.findById(id);
+    public Employee findById(long id) {
+        if(employeeRepository.findById(id).isPresent()){
+            return employeeRepository.findById(id).get();
+        }
+        throw new RuntimeException("Null pointer - TODO");
     }
 
     public List<Employee> findAll(int size, int page){

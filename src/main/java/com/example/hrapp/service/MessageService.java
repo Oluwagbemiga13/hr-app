@@ -11,4 +11,8 @@ public class MessageService {
    public Message getHelloWorld(){
        return Message.builder().id(0).contentOfMessage("HelloWorld").build();
    }
+
+   public Message getAnotherMessage(){
+       return Message.builder().contentOfMessage("Another Message").build();
+   }
 }

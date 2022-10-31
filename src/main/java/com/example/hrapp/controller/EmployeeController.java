@@ -4,21 +4,22 @@ package com.example.hrapp.controller;
 import com.example.hrapp.pojo.Employee;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.QueryParam;
+import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
-import java.util.Optional;
 
+
+@RequestMapping("/employee")
 public interface EmployeeController {
 
-    @GetMapping(value = "/employee/{id}")
-    //@Path(value = "{id}")
-    public Optional<Employee> findById(@PathVariable long id);
+    @GetMapping(value = "/{id}", produces = "application/json")
+    Employee findById(@PathVariable long id);
 
 
-    public List<Employee> findAll(@QueryParam("size") int size,@QueryParam("page") int page);
+    @GetMapping(value = "/list/{size}/{page}", produces = "application/json")
+    List<Employee> findAll(@PathVariable int size,@PathVariable int page);
 
-    public Employee insertEmployee(Employee employee);
+    //TODO:
+//    Employee insertEmployee(Employee employee);
+
+
 }
